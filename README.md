@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./images/9remote.png?1" alt="9Remote Dashboard" width="800"/>
+  <img src="./images/9remote.png" alt="9Remote Dashboard" width="800"/>
 
   # 9Remote — Terminal in Your Pocket
 
