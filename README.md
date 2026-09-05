@@ -1,452 +1,162 @@
 <div align="center">
-  <img src="./images/9remote.png" alt="9Remote Dashboard" width="800"/>
+  <img src="./images/screen.png" alt="9Remote Workspace" width="900"/>
 
-  # 9Remote — Terminal in Your Pocket
+  # 9Remote — Code From Anywhere on Earth
 
-  **Want to code from bed? Fix bugs while having coffee? Deploy while on vacation?**
-
-  **Your Mac/Linux/Windows terminal, remote desktop, and file explorer — accessible from any phone or browser, anywhere, instantly.**
+  **Your entire dev machine, in your pocket.**<br/>
+  **Remote IDE, Remote Desktop, File Explorer, Mobile Emulator, and Localhost Preview — buttery-smooth on mobile with WebRTC ultra-low latency.**
 
   [![npm version](https://img.shields.io/npm/v/9remote.svg)](https://www.npmjs.com/package/9remote)
   [![Downloads](https://img.shields.io/npm/dm/9remote.svg)](https://www.npmjs.com/package/9remote)
-  [![License](https://img.shields.io/badge/license-Proprietary-orange.svg)](#-license)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](#-license)
 
-  [🚀 Quick Start](#-quick-start) • [📊 Comparison](#-9remote-vs-other-remote-solutions) • [💡 Features](#-key-features) • [🌐 Website](https://9remote.cc) • [📖 Docs](https://docs.9remote.cc) • [💬 Facebook](https://www.facebook.com/groups/9teamvn)
+  [🚀 Quick Start](#-quick-start) • [✨ Superpowers](#-5-remote-superpowers--mobile-first) • [📊 Comparison](#-how-9remote-compares) • [🌐 Website](https://9remote.cc) • [📖 Docs](https://docs.9remote.cc)
 
   [🇺🇸 English](./README.md) • [🇻🇳 Tiếng Việt](./i18n/README.vi.md)
 </div>
 
 ---
 
-## 🚧 Development Status
-
-> **9Remote is currently in active development.**
->
-> The source code is **not open-source yet**. If this project gets enough ⭐ support from the community, we will **fully open-source it** so everyone can contribute and self-host.
->
-> **⭐ Star this repo to help us reach the open-source milestone!**
-
----
-
-## 🤔 Why 9Remote?
-
-**Remote access today is painful:**
-
-- ❌ **SSH is a hassle** — firewall rules, port forwarding, SSH keys, IP whitelisting
-- ❌ **VPN is overkill** — complex setup just to check a terminal
-- ❌ **ngrok / tunnels expire** — lose connection, restart everything
-- ❌ **TeamViewer is slow** — high latency, desktop-only, paid for commercial use
-- ❌ **Chrome Remote Desktop** — no terminal, no file explorer, no mobile
-- ❌ **Termius** — SSH-only, no remote desktop, no browser access
-
-**9Remote solves all of it:**
-
-- ✅ **One command** — install, scan QR, done in 30 seconds
-- ✅ **Auto tunnel** — Cloudflare tunnel starts automatically, no port forwarding
-- ✅ **All-in-one** — terminal + remote desktop + file explorer + code editor in one app
-- ✅ **Works on phone** — full workspace from your browser, under 50ms latency
-- ✅ **Persistent sessions** — PTY daemon survives server restarts
-- ✅ **Pair Device security** — only approved devices can connect, zero signup friction
-
----
-
 ## ⚡ Quick Start
 
-**Install globally:**
+Start your remote workspace in **30 seconds** with a single command on your PC/Mac:
 
+```bash
+npx 9remote
+```
+
+*Or install globally:*
 ```bash
 npm install -g 9remote
 9remote
 ```
 
-🎉 **Scan the QR code on your phone → pair your device → you're in.**
+🎉 **Scan the QR code with your phone camera (or open the link on any browser) → click "Approve" on your host → you're in!**
 
-**That's it!** No config, no firewall rules, no signup.
+> **Works on macOS, Linux, and Windows.** Requires Node.js 18+.  
+> Zero configuration. No port forwarding. No account or signup required.
 
-> **Ready in 30 seconds.** Works on macOS, Linux, and Windows.
+### CLI Modes
+
+| Command | Mode | Description |
+|---------|------|-------------|
+| `9remote` | **TUI Mode** | Interactive terminal menu with QR code |
+| `9remote ui` | **Web UI Mode** | Opens the host dashboard at `localhost:2208` |
 
 ---
 
-## 📊 9Remote vs Other Remote Solutions
+## ✨ 5 Remote Superpowers + Mobile-First
+
+### 💻 1. Remote IDE & AI Agent Workspace
+- Multi-pane terminal rows with smooth drag-to-resize splitters.
+- Integrated code editor with syntax highlighting and file tree.
+- Visual Git status, diff viewer, and multi-worktree switcher.
+- Auto-opening artifact inspector for **Claude Code**, Codex, and CLI AI agents (HTML, Markdown, Mermaid).
+
+### 📱 2. Code on Mobile, Web & Any Screen (Mobile Full Feature)
+- Dedicated developer keyboard row (`Esc`, `Tab`, `Ctrl`, `Alt`, navigation arrows).
+- Customizable AI shortcuts and fluid swipe navigation between sessions.
+- Tactile haptic feedback on touch for responsive coding.
+- Fully adaptive UI: Multi-column IDE on desktop/tablet, touch-first card view on mobile.
+
+### 🖥️ 3. Instant Remote Desktop (WebRTC 60fps)
+- Hardware-accelerated screen streaming with ultra-low latency (<20ms).
+- Mouse, touch, keyboard controls, and multi-monitor switching.
+- Vastly lighter on battery and bandwidth than VNC, AnyDesk, or TeamViewer.
+
+### 📁 4. Remote File Explorer
+- Visual directory tree with instant fuzzy file search.
+- Touch drag-and-drop file transfers (upload and download).
+- Secured by path-jail boundaries keeping your host system safe.
+
+### 📱 5. Live Remote Emulator
+- Interactive remote stream for Android Emulator and iOS Simulator.
+- Tap, swipe, and test mobile UI directly from your phone browser without sitting at your desk.
+
+### 🌐 6. Instant Localhost Preview
+- Built-in Service Worker bridge streams `localhost:3000` or `localhost:8080` to your mobile browser.
+- Preview local web apps in real time with zero port forwarding and no ngrok tunnels.
+
+### 🔄 7. Persistent PTY Daemon
+- Background daemon keeps your shells and builds alive on the host.
+- Switching networks (Wi-Fi to 4G), locking your phone, or closing tabs never kills your running tasks.
+
+### 🛡️ 8. 3-Layer Zero-Trust Security
+1. **Split-Key Pairing:** The key is split into HEAD and TAIL; routing relay only sees HEAD and never knows your secret TAIL.
+2. **Direct WebRTC P2P:** Data flows directly device-to-device with X25519 + AES-256-GCM encryption.
+3. **Physical Host Approval:** New devices cannot connect until you physically click "Approve" on your computer screen.
+
+---
+
+## 📊 How 9Remote Compares
 
 | Feature | **9Remote** | Claude Remote | TeamViewer | Chrome Remote | Termius |
 |---------|:-----------:|:-------------:|:----------:|:-------------:|:-------:|
-| Zero Config | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Terminal Access | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Remote Desktop | ✅ | ❌ | ✅ | ✅ | ❌ |
-| File Explorer | ✅ | ❌ | ✅ | ❌ | ✅ |
-| Code Editor | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Git Integration | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Mobile Optimized | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Browser-Based | ✅ | ✅ | ❌ | ✅ | ❌ |
-| QR Login | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Auto Tunnel | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Persistent Sessions | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Multi-Device Sync | ✅ | ✅ | ✅ | ❌ | ✅ |
-| Push Notifications | ✅ | ✅ | ❌ | ❌ | ❌ |
-| AI Integration | ✅ | ✅ | ❌ | ❌ | ❌ |
-| No Port Forwarding | ✅ | ✅ | ✅ | ✅ | ❌ |
-| No Account Required | ✅ | ❌ | ❌ | ❌ | ❌ |
-| **TOTAL** | **16 / 16** | 11 / 16 | 7 / 16 | 5 / 16 | 7 / 16 |
+| **Zero Config** | ✅ | ✅ | ✅ | ✅ | ❌ |
+| **Remote IDE** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Terminal Access** | ✅ | ✅ | ❌ | ❌ | ✅ |
+| **Persistent Daemon** | ✅ | ✅ | ❌ | ❌ | ✅ |
+| **Remote Localhost Preview** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Touch File Explorer & Editor** | ✅ | ❌ | ✅ | ❌ | ✅ |
+| **Remote Desktop** | ✅ | ❌ | ✅ | ✅ | ❌ |
+| **Remote Emulator** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **AI Agent Artifacts** | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Physical Host Approval** | ✅ | ❌ | ✅ | ❌ | ❌ |
+| **Git Integration** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Mobile Optimized** | ✅ | ✅ | ❌ | ❌ | ✅ |
+| **Browser-Based** | ✅ | ✅ | ❌ | ✅ | ❌ |
+| **QR Login** | ✅ | ✅ | ❌ | ❌ | ❌ |
+| **Auto Tunnel** | ✅ | ✅ | ✅ | ✅ | ❌ |
+| **No Port Forwarding** | ✅ | ✅ | ✅ | ✅ | ❌ |
+| **No Account Required** | ✅ | ❌ | ❌ | ❌ | ❌ |
+| **Free & Open Source** | ✅ | ❌ | ❌ | ✅ | ❌ |
+| **TOTAL** | **18 / 18** | 10 / 18 | 6 / 18 | 5 / 18 | 5 / 18 |
 
-> **🏆 9Remote: All-in-one solution with 16/16 features.**
-
----
-
-## ✨ Key Features
-
-| Feature | What It Does | Why It Matters |
-|---------|--------------|----------------|
-| 🖥️ **Remote Terminal** | Full PTY shell via WebSocket | Code like you're sitting at your Mac |
-| 🖱️ **Remote Desktop** | Live screen streaming via WebRTC | View & control your machine from phone |
-| 📁 **File Explorer** | Browse, upload, download files | Manage files without SSH/SFTP |
-| 💻 **Code Editor** | Built-in editor with syntax highlighting | Quick edits without opening IDE |
-| 🔗 **Git Integration** | Run git commands with visual status | Commit/push from your phone |
-| 📱 **Mobile Optimized** | Touch-friendly UI, gesture controls | Full workspace on a 6" screen |
-| 🔑 **QR Login** | One-time 30-min key, scan to connect | Zero-friction mobile access |
-| 🔒 **Auto Tunnel** | Cloudflare tunnel, no port forwarding | Works behind any NAT/firewall |
-| 🔄 **Persistent Sessions** | PTY daemon survives restarts | Long-running commands stay alive |
-| 🌍 **Multi-Device Sync** | Same session across phone/tablet/laptop | Switch devices without losing context |
-| 🔔 **Push Notifications** | Build finished? Get notified | Never miss a critical event |
-| 🤖 **AI Integration** | Works with Claude Code, Codex, OpenClaw | Code with AI from anywhere |
-| 🌐 **Local Sites Proxy** | Expose `localhost:3000` to phone | Test dev servers on mobile instantly |
-| ⚡ **Low Latency** | <50ms typical, WebRTC for desktop | Feels like local |
-| 🔐 **Pair Device** | Approve each device before it connects | No unauthorized access, full control |
-| 🆓 **No Account Required** | Machine ID + QR key, zero signup | Privacy-first design |
-
----
-
-## 📱 Available Platforms
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="200">
-        <b>💻 CLI</b><br/>
-        <sub>npm install -g 9remote</sub><br/>
-        <sub>macOS • Linux • Windows</sub>
-      </td>
-      <td align="center" width="200">
-        <b>🖥️ Desktop App</b><br/>
-        <sub>Tauri native app</sub><br/>
-        <sub>macOS • Windows • Linux</sub>
-      </td>
-      <td align="center" width="200">
-        <b>🌐 Web Client</b><br/>
-        <sub><a href="https://9remote.cc">9remote.cc</a></sub><br/>
-        <sub>Any modern browser</sub>
-      </td>
-      <td align="center" width="200">
-        <b>📱 Mobile App</b><br/>
-        <sub>iOS • Android</sub><br/>
-        <sub>React Native / Expo</sub>
-      </td>
-    </tr>
-  </table>
-</div>
+> **🏆 9Remote: Complete 18/18 capabilities · 100% self-hosted & private.**
 
 ---
 
 ## 🎯 Use Cases
 
-### Case 1: "Code from bed"
-
-**Problem:** It's 11 PM, you remember a bug but laptop is in another room.
-
-**Solution:**
-```
-1. Open 9remote app on phone
-2. Scan QR (or use saved session)
-3. Open terminal → fix bug → git push
-4. Sleep well 😴
-```
-
-### Case 2: "Fix bugs at a cafe"
-
-**Problem:** Production is down. You only have your phone and a bad café Wi-Fi.
-
-**Solution:**
-```
-1. Connect to your home/office Mac via 9remote
-2. Tail logs in terminal
-3. Edit config in built-in editor
-4. Deploy → crisis averted
-```
-
-### Case 3: "Deploy while on vacation"
-
-**Problem:** Client needs a hotfix. You're on the beach.
-
-**Solution:**
-```
-1. Phone → 9remote → your dev machine
-2. git pull → build → deploy
-3. Back to the beach in 5 minutes 🏖️
-```
-
-### Case 4: "On-call engineer"
-
-**Problem:** PagerDuty alert at 3 AM. Don't want to power on laptop.
-
-**Solution:**
-```
-1. Push notification → tap → 9remote opens
-2. Terminal + remote desktop ready
-3. Diagnose + restart service from bed
-4. Resolve incident without getting up
-```
+- **Code from bed** — Fix a bug at 11 PM without getting out of bed. Open your phone, connect to your Mac, fix, commit, push, sleep.
+- **Fix bugs at a cafe** — Server alert while having coffee? Connect from your phone or tablet, tail logs, edit configs, and restart services.
+- **Deploy on vacation** — Urgent client hotfix while you're away? Phone → 9Remote → `git pull` → build → deploy.
+- **Monitor AI Coding Agents** — Run long Claude Code / Cursor tasks on your desktop, and review artifacts, diffs, and progress from your phone.
 
 ---
 
-## 📖 Setup Guide
-
-<details>
-<summary><b>🚀 Installation Options</b></summary>
-
-### Option 1 — NPM (recommended)
-
-```bash
-npm install -g 9remote
-9remote
-```
-
-### Option 2 — Desktop App
-
-Download from [9remote.cc/download](https://9remote.cc) — native app with system tray integration, auto-start on boot, and background mode.
-
-### Option 3 — Mobile App
-
-- **iOS:** App Store → "9Remote"
-- **Android:** Google Play → "9Remote"
-
-</details>
-
-<details>
-<summary><b>🔑 First Run & QR Login</b></summary>
-
-On first run, 9Remote generates two keys:
-
-- **Permanent Key** — stored locally, tied to your machine ID, used for trusted devices
-- **One-Time Key** — 30-minute temporary key, used for the QR code shown in terminal
-
-**Connect from phone:**
-1. Run `9remote` on your Mac/Linux/Windows machine
-2. A QR code appears in the terminal
-3. Open 9Remote app (or [9remote.cc](https://9remote.cc)) on your phone
-4. Scan the QR → connected instantly
-
-> Keys are **never** stored on our servers after the session ends.
-
-</details>
-
-<details>
-<summary><b>🖱️ Remote Desktop Setup (macOS)</b></summary>
-
-Remote Desktop requires two system permissions on macOS:
-
-1. **Screen Recording** — `System Settings → Privacy & Security → Screen Recording → enable Terminal (or 9Remote Desktop app)`
-2. **Accessibility** — `System Settings → Privacy & Security → Accessibility → enable Terminal (or 9Remote Desktop app)`
-
-Then enable in 9Remote:
-```
-TUI menu → Remote Desktop → Toggle ON
-```
-
-**Performance:**
-- Adaptive framerate: 60ms active / 400ms idle
-- Tile-based diff rendering (only changed regions sent)
-- WebRTC DataChannel for minimal latency
-
-</details>
-
-<details>
-<summary><b>🌐 Local Sites Proxy</b></summary>
-
-Expose your local dev servers (e.g. `localhost:3000`, `localhost:5173`) to your phone automatically.
-
-```
-9Remote auto-detects running ports and proxies them:
-  http://localhost:3000  →  https://<tunnel>/proxy/3000/
-  http://localhost:5173  →  https://<tunnel>/proxy/5173/
-```
-
-Perfect for:
-- Testing responsive design on real devices
-- Sharing WIP builds with clients
-- Mobile debugging without USB cable
-
-</details>
-
-<details>
-<summary><b>⌨️ CLI Commands</b></summary>
-
-| Command | Description |
-|---------|-------------|
-| `9remote` | TUI mode — interactive menu with QR code |
-| `9remote ui` | Web UI mode — opens browser dashboard at `localhost:2208` |
-
-</details>
-
----
-
-## ❓ Frequently Asked Questions
+## ❓ FAQ
 
 <details>
 <summary><b>🔒 Is 9Remote secure?</b></summary>
 
-**Yes.** 9Remote uses a **Pair Device** approval system — every new device must be explicitly approved by you before it can access the host. Plus:
-- No open ports on your machine (Cloudflare tunnel, outbound-only)
-- Keys are never stored on our servers after the session ends
-- No terminal output, files, or screen data is collected
-- One-time QR keys expire in 30 minutes
-- Pending/rejected devices can be managed anytime from the TUI menu
-
+**Yes.** 9Remote uses 3 layers of zero-trust defense:
+- Outbound-only Cloudflare tunnel (no open ports or firewall changes needed).
+- Direct WebRTC peer-to-peer data channels with end-to-end encryption.
+- Physical host approval required before any device can access your machine.
+- Your code and credentials never touch third-party cloud servers.
 </details>
 
 <details>
 <summary><b>💰 Is it free?</b></summary>
 
-**Yes, during the development phase.** 9Remote is free to use. No signup, no credit card.
-
-Once we open-source, it will remain free forever (MIT license planned).
-
+**Yes.** 9Remote is free, open source (MIT license), with no subscriptions and no signup required.
 </details>
 
 <details>
-<summary><b>📦 When will it be open-source?</b></summary>
+<summary><b>🌐 Do I need to open router ports or setup DDNS?</b></summary>
 
-**When the project reaches enough ⭐ GitHub stars** to prove community interest.
-
-We want to make sure there's a real community before committing to open-source maintenance. Star this repo to help us hit the milestone faster!
-
+**No.** 9Remote automatically sets up an outbound secure tunnel and negotiates WebRTC P2P connections through NATs and firewalls.
 </details>
 
 <details>
-<summary><b>🌐 Do I need to open any ports?</b></summary>
+<summary><b>🤖 Which AI agents are supported?</b></summary>
 
-**No.** 9Remote uses Cloudflare Quick Tunnel — outbound connection only. Works behind:
-- Home NAT routers
-- Corporate firewalls
-- Mobile hotspots
-- VPNs
-
+Works with any CLI AI tool: **Claude Code**, Cursor CLI, Aider, Codex, OpenClaw, and more. 9Remote provides dedicated multi-pane terminals and live artifact rendering for HTML and diagrams.
 </details>
-
-<details>
-<summary><b>📴 Does it work offline / on LAN only?</b></summary>
-
-**Yes.** 9Remote includes a **LocalFirstAdapter** that races LAN vs tunnel connection and uses whichever is faster. If phone and host are on the same Wi-Fi, traffic stays local.
-
-</details>
-
-<details>
-<summary><b>🤖 Can I use AI coding tools through 9Remote?</b></summary>
-
-**Yes!** 9Remote works seamlessly with:
-- Claude Code
-- OpenAI Codex CLI
-- Cursor
-- OpenClaw
-- Any CLI tool that runs in a terminal
-
-Run them on your host machine, access them from your phone. Combined with [9Router](https://github.com/decolua/9router), you get free AI coding from anywhere.
-
-</details>
-
-<details>
-<summary><b>🖥️ What platforms are supported?</b></summary>
-
-**Host (where 9Remote agent runs):**
-- ✅ macOS (Intel + Apple Silicon)
-- ✅ Linux (x64, arm64)
-- ✅ Windows (x64)
-
-**Client (where you connect from):**
-- ✅ Any modern browser (Chrome, Safari, Firefox, Edge)
-- ✅ iOS 14+
-- ✅ Android 8+
-- ✅ Tauri desktop app (macOS, Windows, Linux)
-
-</details>
-
----
-
-## 🛠️ Tech Stack
-
-- **Runtime:** Node.js 20+
-- **Tunnel:** [Cloudflare Quick Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) — zero-config secure tunnel
-- **Terminal:** [node-pty](https://github.com/microsoft/node-pty) — persistent PTY sessions
-- **Remote Desktop:** [node-datachannel](https://github.com/murat-dogan/node-datachannel) (WebRTC) + [robotjs](https://github.com/octalmage/robotjs) (input control)
-- **Real-time:** [Socket.IO](https://socket.io/) — terminal streaming + WebRTC signaling
-- **Agent UI:** [Preact](https://preactjs.com/) — lightweight embedded dashboard
-- **Web Client:** [Next.js 16](https://nextjs.org/) + React 19 + Tailwind CSS 4
-- **Desktop App:** [Tauri 2](https://tauri.app/) — native shell with auto-updater
-- **Mobile App:** [Expo](https://expo.dev/) — React Native with WebView shell
-- **Edge API:** Cloudflare Workers — session management + TURN credentials
-
----
-
-## 🐛 Troubleshooting
-
-**"Port 2208 already in use"**
-- Another 9Remote instance is running → `pkill -f 9remote` then retry
-- Or run on a different port: `PORT=3308 9remote`
-
-**"Cloudflare tunnel failed to start"**
-- Check internet connection
-- `cloudflared` auto-installed on first run — if it fails, install manually: [cloudflared docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/)
-
-**"Screen Recording / Accessibility permission denied" (macOS)**
-- Grant permissions in `System Settings → Privacy & Security`
-- Restart 9Remote after granting
-
-**"QR code expired"**
-- One-time keys expire in 30 minutes → regenerate from TUI menu: `Key → Regenerate`
-
-**"Can't connect from phone"**
-- Check both devices have internet
-- Try forcing tunnel mode (skip LAN): Settings → Connection → Tunnel only
-
-**"Remote desktop laggy"**
-- Reduce resolution in settings
-- Switch to terminal-only if desktop not needed
-- Use LAN mode if on same Wi-Fi for lowest latency
-
----
-
-## ⭐ Show Your Support   
-
-**9Remote is in active development and we need your support to reach the open-source milestone!**
-
-- ⭐ **Star this repo** — every star brings us closer to going open-source
-- 🐦 **Share on Twitter / X** — tell other devs about 9Remote
-- 💬 **Join our Facebook community** — [facebook.com/groups/9teamvn](https://www.facebook.com/groups/9teamvn)
-- 🐛 **Report issues** — found a bug? Let us know!
-- 💡 **Request features** — what would make your remote workflow better?
-
----
-
-## 📧 Support & Links
-
-- **Website:** [9remote.cc](https://9remote.cc)
-- **Documentation:** [docs.9remote.cc](https://docs.9remote.cc)
-- **NPM Package:** [npmjs.com/package/9remote](https://www.npmjs.com/package/9remote)
-- **GitHub:** [github.com/decolua/9remote](https://github.com/decolua/9remote)
-- **Issues:** [github.com/decolua/9remote/issues](https://github.com/decolua/9remote/issues)
-- **Facebook Community:** [facebook.com/groups/9teamvn](https://www.facebook.com/groups/9teamvn)
 
 ---
 
 ## 📄 License
 
-**Proprietary — All Rights Reserved.**
-
-9Remote is currently in active development and is **not open-source yet**. The published npm package is free to use, but the source code is not publicly available.
-
-> **🎯 Open-source milestone:** once this repo reaches enough ⭐ support, the full source code will be released under the **MIT license**.
-
----
-
-<div align="center">
-  <sub>Built with ❤️ for developers who code from anywhere — bed, beach, or bus.</sub>
-</div>
+MIT License. Free for personal and commercial use.
