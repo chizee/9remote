@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="./images/screen.png" alt="9Remote Workspace" width="900"/>
+  <img src="./images/desktop-ide.webp" alt="9Remote desktop workspace: terminal, editor and AI agent panes side by side" width="900"/>
 
   <p align="center">
-    <img src="./images/mobile-1.webp" width="280" alt="Claude Code on Phone"/>
-    <img src="./images/mobile-2.webp" width="280" alt="File Explorer on Phone"/>
-    <img src="./images/mobile-3.webp" width="280" alt="System Dashboard on Phone"/>
+    <img src="./images/mobile-1.webp" width="32%" alt="Claude Code on Phone"/>
+    <img src="./images/mobile-2.webp" width="32%" alt="File Explorer on Phone"/>
+    <img src="./images/mobile-3.webp" width="32%" alt="System Dashboard on Phone"/>
   </p>
 
   # 9Remote — Remote Everything, Vibecode Everywhere
